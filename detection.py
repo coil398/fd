@@ -21,8 +21,8 @@ async def detect_face(folder, targetFolder, f):
     if len(dets) > 0:
         for d in dets:
             print('get the face in: ' + f)
-            img = img[d.top() - 30: d.bottom() + 30,
-                      d.left() - 30: d.right() + 30]
+            img = img[d.top() - 40: d.bottom() + 20,
+                      d.left() - 15: d.right() + 15]
             cv2.imwrite(targetFolder + f, img)
             if folder == './male/':
                 DETECTED_MALE += 1
